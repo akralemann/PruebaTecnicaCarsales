@@ -33,6 +33,6 @@ export class EpisodesComponent implements OnInit {
     for(let i = 1; i <= 3; i++){
       this.pages.push(i)
     }
- }
+  }
 
 }

@@ -41,6 +41,8 @@ nav ul li a {
     text-decoration: none;
     font-size: 14px;
     font-weight: 400;
+    display: block;
+    cursor: pointer;
 }
 
 nav ul li a:hover{
