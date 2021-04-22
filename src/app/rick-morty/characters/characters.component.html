@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-lg-3" *ngFor="let item of result">
+        <div class="card">
+            <img 
+               [src]="item.image"
+               class="card-img-top" 
+               [alt]="item.name"
+            >
+            <div class="card-body">
+              <h5 class="card-title">{{item.name}}</h5>
+              
+              <div class="info">
+                <span class="info-name">Status:</span>
+                <span class="info-value">{{item.status}}</span>
+             </div>
+             <div class="info">
+                <span class="info-name">Species:</span>
+                <span class="info-value">{{item.species}}</span>
+             </div>
+             <div class="info">
+                <span class="info-name">Gender:</span>
+                <span class="info-value">{{item.gender}}</span>
+             </div>
+             <div class="info">
+                <span class="info-name">Origin:</span>
+                <span class="info-value">{{item.origin.name}}</span>
+             </div>
+             <div class="info">
+                <span class="info-name">Location:</span>
+                <span class="info-value">{{item.location.name}}</span>
+             </div>
+              
+            </div>
+          </div>
+    </div>
+</div>
+<div class="row">
+   <div class="col-12">
+      <nav aria-label="Page navigation example">
+         <ul class="pagination">
+           <li class="page-item">
+             <a class="page-link" href="#" aria-label="Previous">
+               <span aria-hidden="true">&laquo;</span>
+             </a>
+           </li>
+           <li class="page-item"><a class="page-link" href="#">1</a></li>
+           <li class="page-item"><a class="page-link" href="#">2</a></li>
+           <li class="page-item"><a class="page-link" href="#">3</a></li>
+           <li class="page-item">
+             <a class="page-link" href="#" aria-label="Next">
+               <span aria-hidden="true">&raquo;</span>
+             </a>
+           </li>
+         </ul>
+       </nav>
+   </div>
+</div>

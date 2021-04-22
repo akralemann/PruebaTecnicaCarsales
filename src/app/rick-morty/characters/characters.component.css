@@ -1,0 +1,7 @@
+.info-name, .info-value{
+    font-size: 13px;
+}
+
+.info-value{
+    float:right;
+}
