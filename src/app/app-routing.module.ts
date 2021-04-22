@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CharactersComponent } from './rick-morty/characters/characters.component';
-import { EpisodesComponent } from './rick-morty/episodes/episodes.component';
-import { LocationsComponent } from './rick-morty/locations/locations.component';
+import { CharactersComponent } from './rick-morty/components/characters/characters.component';
+import { EpisodesComponent } from './rick-morty/components/episodes/episodes.component';
+import { LocationsComponent } from './rick-morty/components/locations/locations.component';
 
 const routes: Routes = [
   {

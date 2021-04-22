@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Info } from '../models/episodes';
-import { EpisodesService } from '../services/episodes.service';
+import { Info } from '../../models/episodes';
+import { EpisodesService } from '../../services/episodes.service';
 
 @Component({
   selector: 'app-episodes',
@@ -12,11 +12,12 @@ export class EpisodesComponent implements OnInit {
   pages: number[] = [];
   infoPage: Info;
 
-  constructor( private episodesService: EpisodesService ) { }
+  constructor( private episodesService: EpisodesService ) {}
 
   ngOnInit(): void {
     this.episodesService.getEpisodes();
     this.totalpages();
+    
   }
 
   getPage( paramPage ){

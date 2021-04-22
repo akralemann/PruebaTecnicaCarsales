@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CharactersComponent } from './characters/characters.component';
-import { EpisodesComponent } from './episodes/episodes.component';
-import { LocationsComponent } from './locations/locations.component';
+import { CharactersComponent } from './components/characters/characters.component';
+import { EpisodesComponent } from './components/episodes/episodes.component';
+import { LocationsComponent } from './components/locations/locations.component';
 
 
 
