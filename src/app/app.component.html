@@ -6,14 +6,17 @@
   <nav>
     <div class="container">
       <ul>
-        <li 
-          routerLink="" 
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exacts: true }">
-          characters
+        <li>
+          <a
+            routerLink="" 
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exacts: true }"
+          >
+            characters
+          </a> 
         </li>
-        <li routerLink="episodes" routerLinkActive="active">episodes</li>
-        <li routerLink="locations" routerLinkActive="active">locations</li>
+        <li><a routerLink="episodes" routerLinkActive="active">episodes</a> </li>
+        <li><a routerLink="locations" routerLinkActive="active">locations</a></li>
       </ul>
     </div>
   </nav>

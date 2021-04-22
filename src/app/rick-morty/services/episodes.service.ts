@@ -1,20 +1,20 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CharactersResponce, Info, Result } from '../models/character';
+import { Injectable } from '@angular/core';
+import { EpisodesResponce, Info, Result } from '../models/episodes';
 import { environment } from 'src/environments/environment';
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class CharactersService {
+export class EpisodesService {
 
   public result: Result[] = [];
   public info: Info;
+
   constructor( private http: HttpClient ) { }
 
-  getCharacters(page = 1){
-    this.http.get<CharactersResponce>(`${environment.urlCharacter}/?page=${page}`)
+  getEpisodes(page = 1){
+    this.http.get<EpisodesResponce>(`${environment.urlEpisodes}/?page=${page}`)
       .subscribe((resp) => {
         this.info = resp.info;
         this.result = resp.results;

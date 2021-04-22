@@ -1,6 +1,5 @@
 
-
-export interface CharactersResponce {
+export interface EpisodesResponce {
     info:    Info;
     results: Result[];
 }
@@ -13,51 +12,24 @@ export interface Info {
 }
 
 export interface Result {
-    id:       number;
-    name:     string;
-    status:   Status;
-    species:  Species;
-    type:     string;
-    gender:   Gender;
-    origin:   Location;
-    location: Location;
-    image:    string;
-    episode:  string[];
-    url:      string;
-    created:  Date;
-}
-
-export enum Gender {
-    Female = "Female",
-    Male = "Male",
-    Unknown = "unknown",
-}
-
-export interface Location {
-    name: string;
-    url:  string;
-}
-
-export enum Species {
-    Alien = "Alien",
-    Human = "Human",
-}
-
-export enum Status {
-    Alive = "Alive",
-    Dead = "Dead",
-    Unknown = "unknown",
+    id:         number;
+    name:       string;
+    air_date:   string;
+    episode:    string;
+    characters: string[];
+    url:        string;
+    created:    Date;
 }
 
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
-    public static toCharactersResponce(json: string): CharactersResponce {
-        return cast(JSON.parse(json), r("CharactersResponce"));
+    public static toEpisodesResponce(json: string): EpisodesResponce {
+        return cast(JSON.parse(json), r("EpisodesResponce"));
     }
 
-    public static charactersResponceToJson(value: CharactersResponce): string {
-        return JSON.stringify(uncast(value, r("CharactersResponce")), null, 2);
+    public static episodesResponceToJson(value: EpisodesResponce): string {
+        return JSON.stringify(uncast(value, r("EpisodesResponce")), null, 2);
     }
 }
 
@@ -194,7 +166,7 @@ function r(name: string) {
 }
 
 const typeMap: any = {
-    "CharactersResponce": o([
+    "EpisodesResponce": o([
         { json: "info", js: "info", typ: r("Info") },
         { json: "results", js: "results", typ: a(r("Result")) },
     ], false),
@@ -207,33 +179,10 @@ const typeMap: any = {
     "Result": o([
         { json: "id", js: "id", typ: 0 },
         { json: "name", js: "name", typ: "" },
-        { json: "status", js: "status", typ: r("Status") },
-        { json: "species", js: "species", typ: r("Species") },
-        { json: "type", js: "type", typ: "" },
-        { json: "gender", js: "gender", typ: r("Gender") },
-        { json: "origin", js: "origin", typ: r("Location") },
-        { json: "location", js: "location", typ: r("Location") },
-        { json: "image", js: "image", typ: "" },
-        { json: "episode", js: "episode", typ: a("") },
+        { json: "air_date", js: "air_date", typ: "" },
+        { json: "episode", js: "episode", typ: "" },
+        { json: "characters", js: "characters", typ: a("") },
         { json: "url", js: "url", typ: "" },
         { json: "created", js: "created", typ: Date },
     ], false),
-    "Location": o([
-        { json: "name", js: "name", typ: "" },
-        { json: "url", js: "url", typ: "" },
-    ], false),
-    "Gender": [
-        "Female",
-        "Male",
-        "unknown",
-    ],
-    "Species": [
-        "Alien",
-        "Human",
-    ],
-    "Status": [
-        "Alive",
-        "Dead",
-        "unknown",
-    ],
 };
